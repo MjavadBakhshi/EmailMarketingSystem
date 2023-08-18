@@ -16,7 +16,7 @@ class BaseModel extends Model {
         $domain = $parts[1];
         $model = $parts->last();
 
-        return app("Databases\\Factories\\{$domain}\\{$model}Factory");
+        return app("Database\\Factories\\{$domain}\\{$model}Factory");
 
     }
 
