@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\API\Controllers\Subscriber\SubscriberController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+
+/** Authenticated rotues */
+Route::middleware('auth:sanctum')
+->group(function () {
+    
+    /** Subscriber */
+    Route::apiResource('subscriber', SubscriberController::class);
+    
 });
